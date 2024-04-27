@@ -1,0 +1,89 @@
+﻿@model MVC01.Models.Category
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<button type="button" class="btn btn-primary" id="AddCategory">Add Category</button>
+
+
+@* <button type="button" class="btn btn-primary" href="/Excel_File">Download As Excel</button> *@
+
+
+<div class="col-md-6" id="ErrorMsg"></div>
+
+<h1>Index</h1>
+<table class="table table-bordered" id="myTable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody class="text-center" id="table_data"></tbody>
+</table>
+
+
+<!-- Modal -->
+
+<div class="modal fade" id="CategoryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Category</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="POST" id="form_submit">
+            <div class="modal-body">
+            
+                    <input type="text" class="form-control" id="CategoryId" style="display:none" />
+
+                    @* <div class="form-group">
+                         <label for="Name" class="form-label">Name</label>
+                         <input placeholder="Enter Category Name" type="text" class="form-control is-invalid" id="Name" aria-describedby="validationServer03Feedback" required />
+                        <div id="validationServer03Feedback" class="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
+                    </div> *@
+                    @* <div class="form-group">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-control" id="Name" />
+                        <span id="errmsg"></span>
+                    </div> *@
+
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label">Name</label>
+                        <input asp-for="Name" id="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger" id="name_msg"></span>
+                    </div>
+
+
+            
+            </div>
+            <div class="modal-footer">
+                <div class="form-group">
+                        @* <button type="submit" id="AddCategoryButtun" onsubmit="AddCategory()" class="btn btn-primary">Save changes</button> *@
+                        <button type="submit" id="AddCategoryButtun" class="btn btn-primary">Save changes</button>
+                        <button id="btnUpdate" onclick="UpdateCategory()" style="display:none" class="btn btn-warning">Update</button>
+                        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<script src="~/js/custom.js"></script>
+

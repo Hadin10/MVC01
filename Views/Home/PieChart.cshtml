@@ -1,0 +1,94 @@
+﻿<div>
+    <canvas id="myChart1"></canvas>
+    <canvas id="myChart2"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+
+
+
+    const ctx1 = document.getElementById('myChart1');
+
+    new Chart(ctx1, {
+        type: 'pie',
+            data: {
+                labels: [
+                    'Red',
+                    'Blue',
+                    'Yellow'
+                ],
+                datasets: [{
+                label: 'Votes',
+                    data: [60%, 20%, 20%],
+                    backgroundColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235)',
+                        'rgb(255, 205, 86)'
+                    ],
+                    hoverOffset: 4
+                }]
+            }
+    });
+
+
+    const ctx2 = document.getElementById('myChart2');
+    new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange', 'Indigo'],
+            datasets: [{
+                label: 'Value',
+                data: [65, 59, 80, 81, 56, 55, 60],
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)',
+                    'rgb(60, 179, 113)',
+                    'rgb(160, 32, 240)',
+                    'rgb(255, 165, 0)',
+                    'rgb(75, 0, 130)'
+                ],
+                borderColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(255, 159, 64)',
+                    'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                    'rgb(54, 162, 235)',
+                    'rgb(153, 102, 255)',
+                    'rgb(153, 80, 255)'
+                ],
+                borderWidth: 1
+            }]
+        }
+    });
+
+
+    // const ctx2 = document.getElementById('myChart2');
+    // new Chart(ctx2, {
+    //     type: 'bar',
+    //     data: {
+    //         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    //         datasets: [{
+    //             label: '# of Votes',
+    //             data: [12, 19, 3, 5, 2, 3],
+    //             borderWidth: 1
+    //         }]
+    //     },
+    //     options: {
+    //         scales: {
+    //             y: {
+    //                 beginAtZero: true
+    //             }
+    //         }
+    //     }
+    // });
+
+
+
+
+
+
+</script>
